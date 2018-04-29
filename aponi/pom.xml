@@ -12,6 +12,7 @@
 		<hibernate-core>5.0.5.Final</hibernate-core>
 		<javax.servlet-api>4.0.1</javax.servlet-api>
 		<tiles-jsp>3.0.8</tiles-jsp>
+		<slf4j-api>1.7.6</slf4j-api>
 	</properties>
 
 
@@ -28,6 +29,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring-web}</version>
+		</dependency>
+		
+		<!-- logging, slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api}</version>
 		</dependency>
 
 		<!--org.hibernate/hibernate-core -->
