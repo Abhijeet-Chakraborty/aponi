@@ -8,13 +8,13 @@
 	<name>aponi Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring-web>5.0.1.RELEASE</spring-web>
+		<spring.version>5.0.1.RELEASE</spring.version>
 		<hibernate-core>5.0.5.Final</hibernate-core>
 		<javax.servlet-api>4.0.1</javax.servlet-api>
 		<tiles-jsp>3.0.8</tiles-jsp>
 		<slf4j-api>1.7.6</slf4j-api>
+		<dbcp.version>1.4</dbcp.version>
 	</properties>
-
 
 	<dependencies>
 		<dependency>
@@ -28,9 +28,28 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring-web}</version>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Spring ORM -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<!-- logging, slf4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -59,9 +78,32 @@
 			<version>${tiles-jsp}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+		<!-- database pool -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${dbcp.version}</version>
+		</dependency>
 
 	</dependencies>
 	<build>
 		<finalName>aponi</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
